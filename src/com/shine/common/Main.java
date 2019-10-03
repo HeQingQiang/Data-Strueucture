@@ -9,6 +9,7 @@ import com.shine.data.queue.Queue;
 import com.shine.data.stack.ArrayStack;
 import com.shine.data.stack.LinkedListStack;
 import com.shine.data.stack.Stack;
+import com.shine.data.tree.BST;
 
 import java.util.Random;
 
@@ -24,6 +25,24 @@ public class Main<E> {
 
     public static void main(String[] args) {
 
+        //region 二分搜索树遍历
+        BST<Integer> bst = new BST<>();
+        int[] nums = {5, 3, 6, 8, 4, 2};
+        for (int num : nums) {
+            bst.add(num);
+        }
+
+        bst.preOrder();
+        System.out.println();
+
+        bst.inOrder();
+        System.out.println();
+
+        bst.postOrder();
+        System.out.println();
+        //endregion
+
+        //region 队列链表比较
         int count = 10000000;
         //findSecondMax();
         //stackTest();
@@ -34,13 +53,13 @@ public class Main<E> {
         //double time1 = queueTest(arrayQueue, count);
         //System.out.println("ArrayQueue, time:" + time1 + " s");
 
-        LoopQueue<Integer> loopQueue = new LoopQueue();
-        double time2 = queueTest(loopQueue, count);
-        System.out.println("LoopQueue, time:" + time2 + " s");
-
-        LinkedListQueue<Integer> linkedListQueue = new LinkedListQueue();
-        double time3 = queueTest(linkedListQueue, count);
-        System.out.println("LinkedListQueue, time:" + time3 + " s");
+        //LoopQueue<Integer> loopQueue = new LoopQueue();
+        //double time2 = queueTest(loopQueue, count);
+        //System.out.println("LoopQueue, time:" + time2 + " s");
+        //
+        //LinkedListQueue<Integer> linkedListQueue = new LinkedListQueue();
+        //double time3 = queueTest(linkedListQueue, count);
+        //System.out.println("LinkedListQueue, time:" + time3 + " s");
         //ArrayStack<Integer> arrayStack = new ArrayStack<>();
         //double arrayStackTime = stackTest(arrayStack, count);
         //System.out.println("ArrayStack, time: " + arrayStackTime + " s.");
@@ -51,6 +70,8 @@ public class Main<E> {
         //System.out.println("LinkedListStack, time: " + linkedListStackTime + " s.");
         //linkedListTest();
         //linkedListStackTest();
+        //endregion
+
     }
 
     //region 查找数组中的第二大元素.
