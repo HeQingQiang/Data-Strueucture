@@ -11,6 +11,7 @@ import com.shine.data.stack.LinkedListStack;
 import com.shine.data.stack.Stack;
 import com.shine.data.tree.BST;
 
+import java.util.ArrayList;
 import java.util.Random;
 
 
@@ -25,21 +26,38 @@ public class Main<E> {
 
     public static void main(String[] args) {
 
-        //region 二分搜索树遍历
+        //region 二分搜索树
         BST<Integer> bst = new BST<>();
         int[] nums = {5, 3, 6, 8, 4, 2};
         for (int num : nums) {
             bst.add(num);
         }
 
-        bst.preOrder();
-        System.out.println();
+        //bst.preOrder();
+        //System.out.println();
+        //
+        //bst.inOrder();
+        //System.out.println();
+        //
+        //bst.postOrder();
+        //System.out.println();
 
-        bst.inOrder();
-        System.out.println();
 
-        bst.postOrder();
-        System.out.println();
+        //bst.levelOrder();
+        //System.out.println(bst.maximum());
+
+        int n = 1000;
+        Random random = new Random();
+        for (int i = 0; i < n; i++) {
+            bst.add(random.nextInt(10000));
+        }
+
+        ArrayList<Integer> lists = new ArrayList<>();
+        while (!bst.isEmpty()) {
+            lists.add(bst.removeMin());
+        }
+        System.out.println(lists);
+
         //endregion
 
         //region 队列链表比较
