@@ -46,17 +46,22 @@ public class Main<E> {
         //bst.levelOrder();
         //System.out.println(bst.maximum());
 
-        int n = 1000;
-        Random random = new Random();
-        for (int i = 0; i < n; i++) {
-            bst.add(random.nextInt(10000));
-        }
+        //int n = 1000;
+        //Random random = new Random();
+        //for (int i = 0; i < n; i++) {
+        //    bst.add(random.nextInt(10000));
+        //}
+        //
+        //ArrayList<Integer> lists = new ArrayList<>();
+        //while (!bst.isEmpty()) {
+        //    lists.add(bst.removeMin());
+        //}
+        //System.out.println(lists);
 
-        ArrayList<Integer> lists = new ArrayList<>();
-        while (!bst.isEmpty()) {
-            lists.add(bst.removeMin());
-        }
-        System.out.println(lists);
+
+        System.out.println(bst.toString());
+        bst.remove(6);
+        System.out.println(bst.toString());
 
         //endregion
 
