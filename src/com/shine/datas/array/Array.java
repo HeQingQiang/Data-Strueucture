@@ -1,4 +1,4 @@
-package com.shine.data.array;
+package com.shine.datas.array;
 
 
 /**

@@ -1,4 +1,4 @@
-package com.shine.data.queue;
+package com.shine.datas.queue;
 
 
 /**

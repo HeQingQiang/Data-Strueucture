@@ -1,6 +1,6 @@
-package com.shine.data.queue;
+package com.shine.datas.queue;
 
-import com.shine.data.array.Array;
+import com.shine.datas.array.Array;
 
 /**
  * 数组队列实现.

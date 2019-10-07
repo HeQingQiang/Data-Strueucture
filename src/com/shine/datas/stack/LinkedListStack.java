@@ -1,6 +1,6 @@
-package com.shine.data.stack;
+package com.shine.datas.stack;
 
-import com.shine.data.list.LinkedList;
+import com.shine.datas.list.LinkedList;
 
 /**
  * 链表栈实现.

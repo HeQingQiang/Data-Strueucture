@@ -1,4 +1,4 @@
-package com.shine.data.list;
+package com.shine.datas.list;
 
 /**
  * 链表.
@@ -89,7 +89,6 @@ public class LinkedList<E> {
         size++;
 
     }
-
 
     /**
      * 在链表头添加元素.
@@ -221,6 +220,30 @@ public class LinkedList<E> {
     public E removeLast(){
         return remove(size - 1);
     }
+
+    /**
+     * 从链表中删除元素e.
+     *
+     * @param e 待删除的元素
+     */
+    public void removeElement(E e){
+
+        Node prev = dummyHead;
+        while(prev.next != null){
+            if(prev.next.e.equals(e)) {
+                break;
+            }
+            prev = prev.next;
+        }
+
+        if(prev.next != null){
+            Node delNode = prev.next;
+            prev.next = delNode.next;
+            delNode.next = null;
+            size --;
+        }
+    }
+
 
     @Override
     public String toString() {

@@ -1,4 +1,4 @@
-package com.shine.data.tree;
+package com.shine.datas.tree;
 
 import java.util.LinkedList;
 import java.util.Queue;
@@ -31,8 +31,8 @@ public class BST<E extends Comparable<E>> {
         size = 0;
     }
 
-    public BST(int size) {
-        this.size = size;
+    public int size() {
+        return size;
     }
 
     public boolean isEmpty() {

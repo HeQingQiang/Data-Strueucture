@@ -1,6 +1,6 @@
-package com.shine.data.stack;
+package com.shine.datas.stack;
 
-import com.shine.data.array.Array;
+import com.shine.datas.array.Array;
 
 /**
  * 实现数组栈.

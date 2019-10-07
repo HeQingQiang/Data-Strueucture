@@ -1,4 +1,4 @@
-package com.shine.data.stack;
+package com.shine.datas.stack;
 
 /**
  * 栈接口.
