@@ -2,6 +2,7 @@ package com.shine.common;
 
 import com.shine.common.utils.FileOperation;
 import com.shine.datas.array.Array;
+import com.shine.datas.heap.MaxHeap;
 import com.shine.datas.list.LinkedList;
 import com.shine.datas.map.BSTMap;
 import com.shine.datas.map.LinkedListMap;
@@ -109,43 +110,63 @@ public class Main<E> {
         //}
         //
         //System.out.println("Total different words: " + set1.getSize());
+
+        //System.out.println("Pride and Prejudice");
+        //
+        //ArrayList<String> words = new ArrayList<>();
+        //if (FileOperation.readFile("F:\\workspace\\myself\\DataStructure\\src\\com\\shine\\common\\files\\pride-and-prejudice.txt", words)) {
+        //    System.out.println("Total words: " + words.size());
+        //
+        //    LinkedListMap<String, Integer> map = new LinkedListMap<>();
+        //    for (String word : words) {
+        //        if (map.contains(word)) {
+        //            map.set(word, map.get(word) + 1);
+        //        } else {
+        //            map.add(word, 1);
+        //        }
+        //    }
+        //
+        //
+        //    System.out.println("Total different words: " + map.getSize());
+        //    System.out.println("Frequency of PRIDE: " + map.get("pride"));
+        //    System.out.println("Frequency of PREJUDICE: " + map.get("prejudice"));
+        //
+        //    System.out.println("---------------------");
+        //
+        //    BSTMap<String, Integer> mapBST = new BSTMap<>();
+        //    for(String word : words){
+        //        if (mapBST.contains(word)) {
+        //            mapBST.set(word, mapBST.get(word) + 1);
+        //        } else {
+        //            mapBST.add(word, 1);
+        //        }
+        //    }
+        //
+        //    System.out.println("Total different words: " + mapBST.getSize());
+        //    System.out.println("Frequency of PRIDE: " + mapBST.get("pride"));
+        //    System.out.println("Frequency of PREJUDICE: " + mapBST.get("prejudice"));
+        //}
         //endregion
 
-        System.out.println("Pride and Prejudice");
-
-        ArrayList<String> words = new ArrayList<>();
-        if (FileOperation.readFile("F:\\workspace\\myself\\DataStructure\\src\\com\\shine\\common\\files\\pride-and-prejudice.txt", words)) {
-            System.out.println("Total words: " + words.size());
-
-            LinkedListMap<String, Integer> map = new LinkedListMap<>();
-            for (String word : words) {
-                if (map.contains(word)) {
-                    map.set(word, map.get(word) + 1);
-                } else {
-                    map.add(word, 1);
-                }
-            }
-
-
-            System.out.println("Total different words: " + map.getSize());
-            System.out.println("Frequency of PRIDE: " + map.get("pride"));
-            System.out.println("Frequency of PREJUDICE: " + map.get("prejudice"));
-
-            System.out.println("---------------------");
-
-            BSTMap<String, Integer> mapBST = new BSTMap<>();
-            for (String word : words) {
-                if (mapBST.contains(word)) {
-                    mapBST.set(word, mapBST.get(word) + 1);
-                } else {
-                    mapBST.add(word, 1);
-                }
-            }
-
-            System.out.println("Total different words: " + mapBST.getSize());
-            System.out.println("Frequency of PRIDE: " + mapBST.get("pride"));
-            System.out.println("Frequency of PREJUDICE: " + mapBST.get("prejudice"));
+        int n = 1000000;
+        MaxHeap<Integer> maxHeap = new MaxHeap<>();
+        Random random = new Random();
+        for (int i = 0; i < n; i++) {
+            maxHeap.add(random.nextInt(Integer.MAX_VALUE));
         }
+        int[] arr = new int[n];
+        for (int i = 0; i < n; i++) {
+            arr[i] = maxHeap.extractMax();
+        }
+
+        for (int i = 1; i <n; i++) {
+            if (arr[i-1]<arr[i]) {
+                throw new IllegalArgumentException("Error");
+            }
+        }
+
+        System.out.println("Test MaxHeap Completed");
+
     }
 
             //region 查找数组中的第二大元素.

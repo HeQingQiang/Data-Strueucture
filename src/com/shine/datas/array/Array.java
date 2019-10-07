@@ -226,6 +226,20 @@ public class Array<E> {
         data = newData;
     }
 
+    /**
+     * 交换两位下标元素的位置
+     * @param i
+     * @param j
+     */
+    public void swap(int i, int j){
+       if (i < 0 || i>= size || j< 0 ||j >= size) {
+           throw new IllegalArgumentException("Index is illegal.");
+        }else{
+           E t = data[i];
+           data[i] = data[j];
+           data[j] = t;
+       }
+    }
 
     /**
      * 重写toString方法.
