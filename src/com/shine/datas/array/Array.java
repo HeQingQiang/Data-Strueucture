@@ -25,6 +25,19 @@ public class Array<E> {
     }
 
     /**
+     * 将传入的数组转换为数组
+     *
+     * @param arr
+     */
+    public Array(E[] arr){
+        data = (E[]) new Object[arr.length];
+        for (int i = 0; i < arr.length; i++) {
+            data[i] = arr[i];
+        }
+        size = arr.length;
+    }
+
+    /**
      * 无参构造函数，默认数组的容量为10.
      */
     public Array() {

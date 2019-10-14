@@ -1,4 +1,4 @@
-package com.shine.datas.heap;
+package com.shine.datas.tree.heap;
 
 import com.shine.datas.array.Array;
 
@@ -19,6 +19,19 @@ public class MaxHeap<E extends Comparable<E>> {
 
     public MaxHeap() {
         data = new Array<>();
+    }
+
+    /**
+     * 将数组转换为堆
+     *
+     * @param arr 数组
+     */
+    public MaxHeap(E[] arr){
+
+        data = new Array<>(arr);
+        for (int i = parent(arr.length - 1); i >= 0; i--) {
+            siftDown(i);
+        }
     }
 
     public int size() {

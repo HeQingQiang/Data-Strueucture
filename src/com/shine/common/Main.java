@@ -1,11 +1,9 @@
 package com.shine.common;
 
-import com.shine.common.utils.FileOperation;
 import com.shine.datas.array.Array;
-import com.shine.datas.heap.MaxHeap;
+import com.shine.datas.tree.SegmentTree;
+import com.shine.datas.tree.heap.MaxHeap;
 import com.shine.datas.list.LinkedList;
-import com.shine.datas.map.BSTMap;
-import com.shine.datas.map.LinkedListMap;
 import com.shine.datas.queue.ArrayQueue;
 import com.shine.datas.queue.LinkedListQueue;
 import com.shine.datas.queue.LoopQueue;
@@ -14,9 +12,7 @@ import com.shine.datas.stack.ArrayStack;
 import com.shine.datas.stack.LinkedListStack;
 import com.shine.datas.stack.Stack;
 
-import java.util.ArrayList;
 import java.util.Random;
-import java.util.TreeSet;
 
 
 /**
@@ -148,24 +144,34 @@ public class Main<E> {
         //}
         //endregion
 
-        int n = 1000000;
-        MaxHeap<Integer> maxHeap = new MaxHeap<>();
-        Random random = new Random();
-        for (int i = 0; i < n; i++) {
-            maxHeap.add(random.nextInt(Integer.MAX_VALUE));
-        }
-        int[] arr = new int[n];
-        for (int i = 0; i < n; i++) {
-            arr[i] = maxHeap.extractMax();
-        }
+        //region 最大堆
+        //int n = 1000000;
+        //MaxHeap<Integer> maxHeap = new MaxHeap<>();
+        //Random random = new Random();
+        //for (int i = 0; i < n; i++) {
+        //    maxHeap.add(random.nextInt(Integer.MAX_VALUE));
+        //}
+        //int[] arr = new int[n];
+        //for (int i = 0; i < n; i++) {
+        //    arr[i] = maxHeap.extractMax();
+        //}
+        //
+        //for (int i = 1; i <n; i++) {
+        //    if (arr[i-1]<arr[i]) {
+        //        throw new IllegalArgumentException("Error");
+        //    }
+        //}
+        //
+        //System.out.println("Test MaxHeap Completed");
+        //endregion
 
-        for (int i = 1; i <n; i++) {
-            if (arr[i-1]<arr[i]) {
-                throw new IllegalArgumentException("Error");
-            }
-        }
-
-        System.out.println("Test MaxHeap Completed");
+        Integer[] nums = {-2, 0, 3, -5, 2, -1};
+        SegmentTree<Integer> segTree = new SegmentTree<>(nums,
+                (a, b) -> a + b);
+        //System.out.println(segTree);
+        System.out.println(segTree.query(0, 2));
+        System.out.println(segTree.query(2, 5));
+        System.out.println(segTree.query(0, 5 ));
 
     }
 
